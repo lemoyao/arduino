@@ -1,0 +1,45 @@
+const int 红色灯1号=4;
+const int red02=3;
+const int yellow=2;
+const int button=8;
+
+void setup() {
+  // put your setup code here, to run once:
+
+//LED灯阵脚定义
+pinMode(红色灯1号, OUTPUT);
+pinMode(red02, OUTPUT);
+pinMode(yellow, OUTPUT);
+
+//按钮针脚定义
+pinMode(button,INPUT);
+
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+int buttonstate;
+buttonstate= digitalRead (button);
+if(buttonstate==HIGH){
+  digitalWrite(yellow,HIGH);
+  digitalWrite(红色灯1号,LOW);
+  digitalWrite(red02,LOW);
+}
+
+if(buttonstate==LOW){
+  digitalWrite(yellow,LOW);
+  
+  digitalWrite(红色灯1号,HIGH);
+  digitalWrite(red02,LOW);
+  delay(250);
+
+  digitalWrite(red02,HIGH);
+  digitalWrite(红色灯1号,LOW);
+  delay(250);
+   
+  
+  }
+
+}
